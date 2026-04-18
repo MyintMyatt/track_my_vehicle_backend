@@ -1,16 +1,19 @@
-package dev.orion.track_my_vehicle_backend.tracking.dto.request;
+package dev.orion.track_my_vehicle_domain.way.embeddable;
 
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Embeddable
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LocationUpdate {
-    private String wayId;
+public class PointInfo {
+
+    private String name;
     private double lat;
     private double lng;
 }
