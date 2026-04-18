@@ -1,4 +1,4 @@
-package dev.orion.track_my_vehicle_backend.tracking.service;
+package dev.orion.track_my_vehicle_api.tracking.service;
 
 import dev.orion.track_my_vehicle_backend.tracking.dto.request.LocationUpdate;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +15,6 @@ public class LocationUpdateBroadcastService {
 
     public void broadcast(LocationUpdate update){
         log.info("broadcast : {}",update);
-        simpMessagingTemplate.convertAndSend("/topic/vehicle", update);
+        simpMessagingTemplate.convertAndSend("/topic/track-vehicle", update);
     }
 }

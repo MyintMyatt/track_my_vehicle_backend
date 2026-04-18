@@ -17,7 +17,7 @@ public class RealTimeCarTrackingController {
 
     private final LocationUpdateBroadcastService broadcastService;
 
-    @MessageMapping("/track")
+    @MessageMapping("/track-vehicle")
     public void handleLiveTrack(@Payload LocationUpdate update){
         log.info("Received WebSocket update: {}", update);
         broadcastService.broadcast(update);
