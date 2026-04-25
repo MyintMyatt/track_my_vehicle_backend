@@ -18,15 +18,23 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class CarInfoAndSpecification {
 
-    @Column(name = "car_id_card_number", nullable = false)
+    @Column(name = "car_id_card_number", nullable = false, unique = true)
     private String carIdentityCardNumber;
+
+    private String carIdentityCardNumberPhoto;
+
+    @Column(nullable = false)
     private String carModel;
-    private int noOfSeats;
-    private BigDecimal amount;
-    private double distance;
+
+    @Column(nullable = false)
+    private int capacity;
+
+    @Column(nullable = false)
+    private BigDecimal amountPerUnit;
+
+    @Column(nullable = false)
     private DistanceUnit unit;
+
     private String carPhoto;
 
-    @Embedded
-    private DriverInfo driverInfo;
 }

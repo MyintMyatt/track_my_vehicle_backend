@@ -1,12 +1,11 @@
-package dev.orion.track_my_vehicle_domain.way;
+package dev.orion.track_my_vehicle_domain.way.entity;
 
 import dev.orion.track_my_vehicle_domain.auditor.Auditor;
 import dev.orion.track_my_vehicle_domain.auditor.AuditorEntity;
 import dev.orion.track_my_vehicle_domain.constant.ApprovalStatus;
 import dev.orion.track_my_vehicle_domain.constant.DistanceUnit;
-import dev.orion.track_my_vehicle_domain.pk.CarWayRequestPK;
+import dev.orion.track_my_vehicle_domain.way.pk.CarWayPK;
 import dev.orion.track_my_vehicle_domain.way.embeddable.CarInfoAndSpecification;
-import dev.orion.track_my_vehicle_domain.way.embeddable.DriverInfo;
 import dev.orion.track_my_vehicle_domain.way.embeddable.PointInfo;
 import jakarta.persistence.*;
 
@@ -18,7 +17,7 @@ public class CarWayRequest extends AuditorEntity {
 
     @Id
     @Embedded
-    private CarWayRequestPK id;
+    private CarWayPK id;
 
     @Embedded
     @AttributeOverrides({

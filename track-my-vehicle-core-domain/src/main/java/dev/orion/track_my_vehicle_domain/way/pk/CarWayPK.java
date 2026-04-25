@@ -1,4 +1,4 @@
-package dev.orion.track_my_vehicle_domain.pk;
+package dev.orion.track_my_vehicle_domain.way.pk;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 @Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
-public class CarWayRequestPK {
+public class CarWayPK {
 
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 
@@ -30,10 +30,10 @@ public class CarWayRequestPK {
         return "%s-%06d-%03d".formatted(createdAt.format(formatter), all_seq, one_seq);
     }
 
-    public static  CarWayRequestPK from(String code){
+    public static  CarWayPK from(String code){
         try{
             var arr = code.split("-");
-            var pk = new CarWayRequestPK(LocalDateTime.parse(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
+            var pk = new CarWayPK(LocalDateTime.parse(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
             return  pk;
         }catch (RuntimeException e){
             e.printStackTrace();
