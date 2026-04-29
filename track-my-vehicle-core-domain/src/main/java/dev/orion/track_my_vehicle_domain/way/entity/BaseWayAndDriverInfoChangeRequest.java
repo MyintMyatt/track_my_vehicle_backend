@@ -1,6 +1,6 @@
 package dev.orion.track_my_vehicle_domain.way.entity;
 
-import dev.orion.track_my_vehicle_domain.common.BaseChangeRequest;
+import dev.orion.track_my_vehicle_domain.common.entity.BaseChangeRequest;
 import dev.orion.track_my_vehicle_domain.way.constant.WayAndDriverChangeAction;
 import jakarta.persistence.*;
 import lombok.*;

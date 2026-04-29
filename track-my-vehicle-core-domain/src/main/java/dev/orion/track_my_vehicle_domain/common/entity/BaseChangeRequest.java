@@ -1,4 +1,4 @@
-package dev.orion.track_my_vehicle_domain.common;
+package dev.orion.track_my_vehicle_domain.common.entity;
 
 import dev.orion.track_my_vehicle_domain.auditor.Auditor;
 import dev.orion.track_my_vehicle_domain.constant.ApprovalStatus;
