@@ -1,5 +1,6 @@
 package dev.orion.track_my_vehicle_domain.pk;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,12 +17,13 @@ public class BaseChangeReqPk {
 
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 
-    private LocalDate createAt;
+    @Column(name = "requested_at")
+    private LocalDate requestedAt;
     private int allSeq;
     private int todaySeq;
 
     public String code(){
-        return "%s-%06d-%03d".formatted(createAt.format(formatter), allSeq, todaySeq);
+        return "%s-%06d-%03d".formatted(requestedAt.format(formatter), allSeq, todaySeq);
     }
 
     public BaseChangeReqPk from(String code){

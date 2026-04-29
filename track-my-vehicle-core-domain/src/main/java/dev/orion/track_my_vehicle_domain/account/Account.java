@@ -9,6 +9,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "account")
 @Data
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Account extends AuditorEntity {
 
     @Id
@@ -16,7 +17,7 @@ public abstract class Account extends AuditorEntity {
     private long id;
 
     @Column(nullable = false, unique = true)
-    private String username;
+    private String name;
 
     private String fullName;
 

@@ -4,14 +4,15 @@ import dev.orion.track_my_vehicle_domain.common.BaseChangeRequest;
 import dev.orion.track_my_vehicle_domain.way.constant.WayAndDriverChangeAction;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "base_car_and_way_change_request")
+@Table(name = "base_way_and_driver_info_change_request")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class BaseWayAndDriverInfoChangeRequest extends BaseChangeRequest {
 

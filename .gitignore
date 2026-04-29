@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+track-my-vehicle-admin-application/src/main/resources/application-dev.properties

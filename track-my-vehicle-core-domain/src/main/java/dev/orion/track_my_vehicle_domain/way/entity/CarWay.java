@@ -58,8 +58,6 @@ public class CarWay extends AuditorEntity {
 
     private BigDecimal amountPerUnit;
 
-    @Column(nullable = false)
-    private LocalDateTime requestAt;
     private LocalDateTime updateAt;
 
     private boolean isRequested;
@@ -75,7 +73,7 @@ public class CarWay extends AuditorEntity {
 
     @Embedded
     @AttributeOverrides({
-            @AttributeOverride(name = "username", column = @Column(name = "maker_id")),
+            @AttributeOverride(name = "userName", column = @Column(name = "maker_id")),
             @AttributeOverride(name = "fullName", column = @Column(name = "maker_name"))
     })
     private Auditor maker;
@@ -83,7 +81,7 @@ public class CarWay extends AuditorEntity {
 
     @Embedded
     @AttributeOverrides({
-            @AttributeOverride(name = "username", column = @Column(name = "checker_id")),
+            @AttributeOverride(name = "userName", column = @Column(name = "checker_id")),
             @AttributeOverride(name = "fullName", column = @Column(name = "checker_name"))
     })
     private Auditor checker;

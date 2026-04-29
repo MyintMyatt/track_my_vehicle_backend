@@ -28,14 +28,22 @@ public class FerryCarRequest {
      * for new way registration
      * */
     @ManyToOne
-    @JoinColumn(name = "way_id", referencedColumnName = "id")
+    @JoinColumns({
+            @JoinColumn(name = "fk_way_created_at", referencedColumnName = "requested_at"),
+            @JoinColumn(name = "fkway_all_seq_number", referencedColumnName = "all_seq_number"),
+            @JoinColumn(name = "fkway_one_day_seq", referencedColumnName = "one_day_seq")
+    })
     private List<CarWay> carWayList;
 
     /*
     * for existing way's car change request
     * */
     @ManyToOne
-    @JoinColumn(name = "way_info_change_id", referencedColumnName = "id")
+    @JoinColumns({
+            @JoinColumn(name = "fk_way_change_created_at", referencedColumnName = "requested_at"),
+            @JoinColumn(name = "fk_way_change_all_seq", referencedColumnName = "all_seq"),
+            @JoinColumn(name = "fk_way_change_today_seq", referencedColumnName = "today_seq")
+    })
     private List<WayInfoChangeRequest> wayInfoChangeRequestList;
 
     @Embedded
@@ -52,7 +60,7 @@ public class FerryCarRequest {
 
     @Embedded
     @AttributeOverrides({
-            @AttributeOverride(name = "username", column = @Column(name = "maker_id")),
+            @AttributeOverride(name = "userName", column = @Column(name = "maker_id")),
             @AttributeOverride(name = "fullName", column = @Column(name = "maker_name"))
     })
     private Auditor maker;
@@ -60,7 +68,7 @@ public class FerryCarRequest {
 
     @Embedded
     @AttributeOverrides({
-            @AttributeOverride(name = "username", column = @Column(name = "checker_id")),
+            @AttributeOverride(name = "userName", column = @Column(name = "checker_id")),
             @AttributeOverride(name = "fullName", column = @Column(name = "checker_name"))
     })
     private Auditor checker;

@@ -20,7 +20,7 @@
     <modules>
         <module>track-my-vehicle-core-domain</module>
         <module>track-my-vehicle-service</module>
-        <module>track-my-vehicle-application</module>
+        <module>track-my-vehicle-admin-application</module>
         <module>track-my-vehicle-kyc</module>
         <module>track-my-vehicle-commons</module>
         <module>track-my-vechicle-tracking</module>

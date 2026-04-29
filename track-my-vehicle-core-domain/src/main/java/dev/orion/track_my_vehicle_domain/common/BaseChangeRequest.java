@@ -5,18 +5,18 @@ import dev.orion.track_my_vehicle_domain.constant.ApprovalStatus;
 import dev.orion.track_my_vehicle_domain.pk.BaseChangeReqPk;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "base_change_reqeust")
+@Table(name = "base_change_request")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class BaseChangeRequest {
 
@@ -25,7 +25,7 @@ public abstract class BaseChangeRequest {
 
     private String title;
 
-    private String desc;
+    private String description;
 
     @Column(columnDefinition = "TEXT")
     private String oldInfo;
@@ -45,7 +45,7 @@ public abstract class BaseChangeRequest {
 
     @Embedded
     @AttributeOverrides({
-            @AttributeOverride(name = "username", column = @Column(name = "maker_id")),
+            @AttributeOverride(name = "userName", column = @Column(name = "maker_id")),
             @AttributeOverride(name = "fullName", column = @Column(name = "maker_name"))
     })
     private Auditor maker;
@@ -53,7 +53,7 @@ public abstract class BaseChangeRequest {
 
     @Embedded
     @AttributeOverrides({
-            @AttributeOverride(name = "username", column = @Column(name = "checker_id")),
+            @AttributeOverride(name = "userName", column = @Column(name = "checker_id")),
             @AttributeOverride(name = "fullName", column = @Column(name = "checker_name"))
     })
     private Auditor checker;

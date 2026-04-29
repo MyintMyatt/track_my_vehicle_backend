@@ -19,8 +19,12 @@ public class FerryCar extends AuditorEntity {
     @Id
     private String id;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "way_id", referencedColumnName = "id")
+    @OneToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumns({
+            @JoinColumn(name = "way_created_at", referencedColumnName = "requested_at"),
+            @JoinColumn(name = "way_all_seq_number", referencedColumnName = "all_seq_number"),
+            @JoinColumn(name = "way_one_day_seq", referencedColumnName = "one_day_seq")
+    })
     private CarWay carWay;
 
     @Column(unique = true)

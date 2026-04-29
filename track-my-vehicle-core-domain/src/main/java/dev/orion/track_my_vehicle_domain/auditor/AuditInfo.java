@@ -20,7 +20,7 @@ public class AuditInfo {
 
     @CreatedBy
     @AttributeOverrides({
-            @AttributeOverride(name = "username", column = @Column(name = "created_user_id")),
+            @AttributeOverride(name = "userName", column = @Column(name = "created_user_id")),
             @AttributeOverride(name = "fullName", column = @Column(name = "created_user_name"))
     })
     @Embedded
@@ -32,8 +32,8 @@ public class AuditInfo {
 
     @LastModifiedBy
     @AttributeOverrides({
-            @AttributeOverride(name = "username", column = @Column(name = "created_user_id")),
-            @AttributeOverride(name = "fullName", column = @Column(name = "created_user_name"))
+            @AttributeOverride(name = "userName", column = @Column(name = "updated_user_id")),
+            @AttributeOverride(name = "fullName", column = @Column(name = "updated_user_name"))
     })
     @Embedded
     private Auditor updateBy;
