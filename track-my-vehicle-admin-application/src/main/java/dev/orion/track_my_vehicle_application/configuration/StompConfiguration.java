@@ -1,4 +1,4 @@
-package dev.orion.track_my_vehicle_api.configuration;
+package dev.orion.track_my_vehicle_application.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.Message;
