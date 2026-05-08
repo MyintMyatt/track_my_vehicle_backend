@@ -17,15 +17,30 @@
         <java.version>21</java.version>
     </properties>
 
+
     <modules>
         <module>track-my-vehicle-core-domain</module>
-        <module>track-my-vehicle-service</module>
+        <module>track-my-vehicle-core-service</module>
         <module>track-my-vehicle-admin-application</module>
-        <module>track-my-vehicle-kyc</module>
+        <module>track-my-vehicle-mobile-application</module>
         <module>track-my-vehicle-commons</module>
         <module>track-my-vechicle-tracking</module>
-        <module>track-my-vehicle-way-management</module>
-        <module>track-my-vehicle-account-management</module>
+        <module>track-my-vehicle-utils</module>
+        <module>track-my-vehicle-osm-client</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>

@@ -7,9 +7,10 @@
         <groupId>dev.orion</groupId>
         <artifactId>track-my-vehicle</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>track-my-vehicle-kyc</artifactId>
+    <artifactId>track-my-vehicle-utils</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

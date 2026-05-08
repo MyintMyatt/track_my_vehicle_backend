@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>track-my-vehicle-account-management</artifactId>
+    <artifactId>track-my-vehicle-mobile-application</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
