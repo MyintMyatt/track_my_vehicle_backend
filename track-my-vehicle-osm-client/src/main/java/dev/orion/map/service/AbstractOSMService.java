@@ -11,4 +11,6 @@ public abstract class AbstractOSMService {
         return this.BASE_URL;
     }
 
+
+
 }
