@@ -2,6 +2,7 @@ package dev.orion.track_my_vehicle_application.map.service;
 
 import dev.orion.map.client.OSMClient;
 import dev.orion.map.client.OSRMClient;
+import dev.orion.map.output.GeocodingResponse;
 import dev.orion.track_my_vehicle_application.map.input.Points;
 import dev.orion.track_my_vehicle_application.map.output.DistanceAndDurationResponse;
 import dev.orion.track_my_vehicle_application.map.output.DurationDto;
@@ -24,7 +25,7 @@ public class MapService {
         return osmClient.getLatLngByLocationName(name);
     }
 
-    public Object findNameByLatLng(double lat, double lng) {
+    public GeocodingResponse findNameByLatLng(double lat, double lng) {
         return osmClient.getLocationNameByLatLng(lat, lng);
     }
 

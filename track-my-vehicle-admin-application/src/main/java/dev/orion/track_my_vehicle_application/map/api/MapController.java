@@ -1,6 +1,7 @@
 package dev.orion.track_my_vehicle_application.map.api;
 
 import dev.orion.commons.model.ApiResponse;
+import dev.orion.map.output.GeocodingResponse;
 import dev.orion.track_my_vehicle_application.map.input.Points;
 import dev.orion.track_my_vehicle_application.map.service.MapService;
 import dev.orion.track_my_vehicle_domain.constant.DistanceUnit;
@@ -21,7 +22,7 @@ public class MapController {
     }
 
     @GetMapping("name")
-    public ApiResponse<Object> findNameByLatLng(@RequestParam(name = "lat") double lat, @RequestParam(name = "lng") double lng){
+    public ApiResponse<GeocodingResponse> findNameByLatLng(@RequestParam(name = "lat") double lat, @RequestParam(name = "lng") double lng){
         return ApiResponse.success(mapService.findNameByLatLng(lat, lng));
     }
 

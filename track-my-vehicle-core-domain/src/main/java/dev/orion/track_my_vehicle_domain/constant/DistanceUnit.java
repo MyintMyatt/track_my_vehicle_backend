@@ -3,7 +3,7 @@ package dev.orion.track_my_vehicle_domain.constant;
 import dev.orion.commons.utils.EnumResponse;
 
 public enum DistanceUnit implements EnumResponse {
-    KILO_METER("kilo meter"),
+    KILO_METER("kilometer"),
     METER("meter"),
     MILE("mile")
     ;
