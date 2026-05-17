@@ -61,8 +61,13 @@ public class OSRMService extends AbstractOSRMService {
 
     private OSRMResponse convertToResponse(Map<String, Object> res){
         var data =  (List<Map<String, Object>>) res.get("routes");
-        if (!data.isEmpty()){
-           return new OSRMResponse((Double) data.get(0).get("duration"), (Double) data.get(0).get("distance"));
+        if (data != null && !data.isEmpty()) {
+            Map<String, Object> firstRoute = data.get(0);
+
+            Double duration = firstRoute.get("duration") instanceof Number n ? n.doubleValue() : 0.0;
+            Double distance = firstRoute.get("distance") instanceof Number n ? n.doubleValue() : 0.0;
+
+            return new OSRMResponse(duration, distance);
         }
         return new OSRMResponse();
     }

@@ -21,10 +21,10 @@ public class CarWayPK {
     private LocalDate requestedAt;
 
     @Column(name = "all_seq_number")
-    private int allSeqNumber;
+    private long allSeqNumber;
 
     @Column(name = "one_day_seq")
-    private int oneDaySeq;
+    private long oneDaySeq;
 
     public String code(){
         return "%s-%06d-%03d".formatted(requestedAt.format(formatter), allSeqNumber, oneDaySeq);
@@ -33,9 +33,13 @@ public class CarWayPK {
     public static  CarWayPK from(String code){
         try{
             var arr = code.split("-");
-            return new CarWayPK(LocalDate.parse(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
+            return new CarWayPK(LocalDate.parse(arr[0]), Long.parseLong(arr[1]), Long.parseLong(arr[2]));
         }catch (RuntimeException e){
             throw new RuntimeException();
         }
+    }
+
+    public static CarWayPK from(LocalDate date, long seq, long allSeq){
+        return new CarWayPK(date, allSeq, seq);
     }
 }

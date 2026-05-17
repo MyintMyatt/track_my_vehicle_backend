@@ -18,10 +18,10 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class CarInfoAndSpecification {
 
-    @Column(name = "car_id_card_number", nullable = false, unique = true)
-    private String carIdentityCardNumber;
+    @Column(name = "car_license_number", nullable = false, unique = true)
+    private String carLicenseNumber;
 
-    private String carIdentityCardNumberPhoto;
+    private String carLicenseNumberPhoto;
 
     @Column(nullable = false)
     private String carModel;

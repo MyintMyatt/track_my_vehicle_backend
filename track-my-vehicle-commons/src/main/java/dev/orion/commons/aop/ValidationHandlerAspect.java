@@ -17,6 +17,7 @@ public class ValidationHandlerAspect {
     @Before(value = "apiMethod() and args(..,result)", argNames = "result")
     public void handle(BindingResult result){
         if (result.hasErrors()){
+            System.err.println("=============");
             throw new ApiValidationException(result);
         }
     }

@@ -13,6 +13,7 @@ import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -47,6 +48,15 @@ public class CarWay extends AuditorEntity {
             @AttributeOverride(name = "lng", column = @Column(name = "end_point_lng", nullable = false)),
     })
     private PointInfo endPoint;
+
+    @ElementCollection
+    @CollectionTable(name = "way_points",
+            joinColumns = {
+                    @JoinColumn(name = "way_created_at", referencedColumnName = "requested_at"),
+                    @JoinColumn(name = "way_all_seq_number", referencedColumnName = "all_seq_number"),
+                    @JoinColumn(name = "way_one_day_seq", referencedColumnName = "one_day_seq")
+            })
+    private List<PointInfo> points;
 
     @Column(nullable = false)
     private double totalDistance;

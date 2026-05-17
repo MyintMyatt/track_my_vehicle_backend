@@ -26,7 +26,7 @@ public class MapController {
         return ApiResponse.success(mapService.findNameByLatLng(lat, lng));
     }
 
-    @GetMapping("distance-between-points")
+    @PostMapping("distance-between-points")
     public ApiResponse<Object> getDistanceAndDuration(@Valid @RequestBody Points points, @RequestParam(name = "distance-unit", required = false) DistanceUnit distanceUnit){
         return ApiResponse.success(mapService.getDistanceAndDuration(points, distanceUnit));
     }

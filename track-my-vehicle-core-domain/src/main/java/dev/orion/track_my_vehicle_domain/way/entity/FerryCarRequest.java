@@ -5,10 +5,12 @@ import dev.orion.track_my_vehicle_domain.constant.ApprovalStatus;
 import dev.orion.track_my_vehicle_domain.way.embeddable.CarInfoAndSpecification;
 import dev.orion.track_my_vehicle_domain.way.embeddable.DriverInfo;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
-import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -33,7 +35,7 @@ public class FerryCarRequest {
             @JoinColumn(name = "fkway_all_seq_number", referencedColumnName = "all_seq_number"),
             @JoinColumn(name = "fkway_one_day_seq", referencedColumnName = "one_day_seq")
     })
-    private List<CarWay> carWayList;
+    private CarWay carWay;
 
     /*
     * for existing way's car change request
@@ -44,7 +46,7 @@ public class FerryCarRequest {
             @JoinColumn(name = "fk_way_change_all_seq", referencedColumnName = "all_seq"),
             @JoinColumn(name = "fk_way_change_today_seq", referencedColumnName = "today_seq")
     })
-    private List<WayInfoChangeRequest> wayInfoChangeRequestList;
+    private WayInfoChangeRequest wayInfoChangeRequest;
 
     @Embedded
     private CarInfoAndSpecification carInfoAndSpecification;

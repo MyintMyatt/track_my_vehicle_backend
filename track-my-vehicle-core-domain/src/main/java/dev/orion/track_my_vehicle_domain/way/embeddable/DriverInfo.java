@@ -28,17 +28,17 @@ public class DriverInfo {
     private String phone;
 
     @Column(nullable = false)
-    private String identityCardNumber;
+    private String nrc;
 
     @Column(nullable = false)
-    private String identityCardPhoto;
+    private String nrcCardPhoto;
 
     @Column(nullable = false)
-    private String carLicenseNumber;
+    private String driverLicenseNumber;
 
     @Column(nullable = false)
-    private String carLicensePhoto;
+    private String driverLicensePhoto;
 
     @Column(nullable = false)
-    private String driverPassportPhoto;
+    private String driverProfilePhoto;
 }
